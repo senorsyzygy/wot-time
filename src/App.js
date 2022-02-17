@@ -1,23 +1,26 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Col, Container, Row } from 'react-bootstrap';
+import HourForm from './components/Form';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <Container className="appContainer">
+          <Row>
+            <Col>
+              <h1 className="header-title">World of Tanks Game Time Calculator</h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <HourForm/>
+            </Col>
+          </Row>
+        </Container>
+      </main>
     </div>
   );
 }
