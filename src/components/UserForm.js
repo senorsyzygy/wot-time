@@ -8,6 +8,7 @@ export default function UserForm() {
     const [query,setQuery] = useState("")
     const [calc,setCalc] = useState("")
     const apiClient = new ApiClient();
+    //gets the account id from first get function then uses that account id for second get function
     const handleSubmit = (e) => {
         e.preventDefault()
         const accSearch = query
@@ -27,9 +28,9 @@ export default function UserForm() {
                 <Col>
                     <Form id="idsearch" onSubmit={(e) => handleSubmit(e)}>
                         <Form.Group>
-                            <Form.Label>Type your username in below!</Form.Label>
-                            <Form.Control type="text" placeholder="Username" name="userinput" value={query} onChange={e => setQuery(e.target.value)} ara-describedby="userHelp"/>
-                            <Form.Text id="userHelp" muted>Put in the username you use to login to automatically calculate your hours from total battles</Form.Text>
+                            <Form.Label>Type your nickname in below! (EU players only)</Form.Label>
+                            <Form.Control type="text" placeholder="Nickname" name="userinput" value={query} onChange={e => setQuery(e.target.value)} ara-describedby="userHelp"/>
+                            <Form.Text id="userHelp" muted>Put in the nickname you use to login to automatically calculate your hours from total battles</Form.Text>
                         </Form.Group>
                         <Button color="primary" type="submit">Submit</Button>
                     </Form>
@@ -37,7 +38,7 @@ export default function UserForm() {
             </Row>
             <Row className="formResult">
                 <Col>
-                    <h5 className="timeOutput">You are {query}, you have played {calc} hours!</h5>
+                    {calc != "" ? <><h5 className="timeOutput">You have played {calc} hours!</h5></> : <><h5 className="timeOutput">Put in your username to find out your hours</h5></>}
                 </Col>
             </Row>
         </Container>

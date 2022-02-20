@@ -25,4 +25,4 @@ export class ApiClient {
 }
 
 // https://api.worldoftanks.eu/wot/account/list/?application_id=1416ea30d8658278ca7c36e69ad730eb&search=&fields=account_id - first example request
-// https://api.worldoftanks.eu/wot/account/info/?application_id=1416ea30d8658278ca7c36e69ad730eb&account_id=&fields=statistics.all.battles - second exapme request
+// https://api.worldoftanks.eu/wot/account/info/?application_id=1416ea30d8658278ca7c36e69ad730eb&account_id=&fields=statistics.all.battles - second example request
